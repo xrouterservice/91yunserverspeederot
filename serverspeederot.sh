@@ -103,11 +103,13 @@ echo "Mem free is 560"
 echo "SO , Here in put 550"
 memshiji="512"
 read -p "Input MEM FREE(default 512): " memshiji
-memserverspeeder2=$[$memshiji*8]
+memserverspeeder2=`expr $memshiji \* 8`
+echo $memserverspeeder2
 memserverspeederall=`echo $memshiji $memserverspeeder2`
-sed -i "s/l2wQLimit="256 2048"\"/l2wQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
-sed -i "s/w2lQLimit="256 2048"\"/w2lQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
-sed -i "s/initialCwndWan="22"\"/initialCwndWan=\"650\"/g" /serverspeeder/etc/config
+sed -i "s/l2wQLimit=\"256 2048\"/l2wQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
+sed -i "s/w2lQLimit=\"256 2048\"/w2lQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
+#sed -i "s/w2lQLimit=\"256 2048\"/w2lQLimit=\"512 4096\"/g" /serverspeeder/etc/config
+sed -i "s/initialCwndWan="22"\"/initialCwndWan=\"60\"/g" /serverspeeder/etc/config
 bash /serverspeeder/bin/serverSpeeder.sh reload
 bash /serverspeeder/bin/serverSpeeder.sh restart
 
