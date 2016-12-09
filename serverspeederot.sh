@@ -86,7 +86,7 @@ if [ "$DISTRO" == "CentOS" ]; then
 cp /serverspeeder/etc/config /serverspeeder/etc/config.bak
 sed -i "s/accppp=\"0\"/accppp=\"1\"/g" /serverspeeder/etc/config
 # 高级入向加速
-sed -i "s/advinacc=\"0\″/advinacc=\"1\"/g" /serverspeeder/etc/config
+sed -i "s/advinacc=\"0\"/advinacc=\"1\"/g" /serverspeeder/etc/config
 # 局域网加速 这个有点小必要
 sed -i "s/subnetAcc=\"0\"/subnetAcc=\"1\"/g" /serverspeeder/etc/config
 
