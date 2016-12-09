@@ -85,8 +85,8 @@ if [ "$DISTRO" == "CentOS" ]; then
 
 cp /serverspeeder/etc/config /serverspeeder/etc/config.bak
 sed -i "s/accppp=\"0\"/accppp=\"1\"/g" /serverspeeder/etc/config
-sed -i "s/advinacc="0"\"/advinacc=\"1\"/g" /serverspeeder/etc/config
-sed -i "s/subnetAcc="0"\"/subnetAcc=\"1\"/g" /serverspeeder/etc/config
+sed -i "s/advinacc=\"0\"/advinacc=\"1\"/g" /serverspeeder/etc/config
+sed -i "s/subnetAcc=\"0\"/subnetAcc=\"1\"/g" /serverspeeder/etc/config
 clear
 echo "MEMINFO:"
 echo 
@@ -109,7 +109,7 @@ memserverspeederall=`echo $memshiji $memserverspeeder2`
 sed -i "s/l2wQLimit=\"256 2048\"/l2wQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
 sed -i "s/w2lQLimit=\"256 2048\"/w2lQLimit=\"$memserverspeederall\"/g" /serverspeeder/etc/config
 #sed -i "s/w2lQLimit=\"256 2048\"/w2lQLimit=\"512 4096\"/g" /serverspeeder/etc/config
-sed -i "s/initialCwndWan="22"\"/initialCwndWan=\"60\"/g" /serverspeeder/etc/config
+sed -i "s/initialCwndWan=\"22\"/initialCwndWan=\"60\"/g" /serverspeeder/etc/config
 bash /serverspeeder/bin/serverSpeeder.sh reload
 bash /serverspeeder/bin/serverSpeeder.sh restart
 
